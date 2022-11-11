@@ -10,7 +10,7 @@ const Header = () => {
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to="/" aria-label="Dogs - Home">
           {/* <Dogs /> */}
-          <img src={logo} alt="" />
+          <img src={logo} alt="foto dogs" />
         </Link>
         <Link className={styles.login} to="/login">
           Login | Criar
