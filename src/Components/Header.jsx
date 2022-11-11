@@ -6,7 +6,7 @@ import logo from "../assets/dogs.svg";
 
 const Header = () => {
   return (
-    <header style={styles.header}>
+    <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to="/" aria-label="Dogs - Home">
           {/* <Dogs /> */}
