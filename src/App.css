@@ -2,3 +2,10 @@ input {
   display: block;
   margin-bottom: 1rem;
 }
+button {
+  background-color: blue;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 0.5rem;
+}

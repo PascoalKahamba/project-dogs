@@ -24,6 +24,7 @@ const UserPost = () => {
         value={email}
         onChange={({ target }) => setEmail(target.value)}
       />
+      <button>enviar</button>
     </div>
   );
 };
