@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoGet from "./edpoints/PhotoGet";
 import PhotoPost from "./edpoints/PhotoPost";
 import TokenPost from "./edpoints/TokenPost";
 import UserPost from "./edpoints/UserPost";
@@ -12,6 +13,8 @@ const Api = () => {
       <TokenPost />
       <h2>PHOTO POST</h2>
       <PhotoPost />
+      <h2>PHOTO GET</h2>
+      <PhotoGet />
     </div>
   );
 };
