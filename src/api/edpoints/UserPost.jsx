@@ -4,8 +4,30 @@ const UserPost = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetch("https://dogsapi.origamid.dev/json/api/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      }),
+    })
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json);
+        return json;
+      });
+  }
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="username"
@@ -25,7 +47,7 @@ const UserPost = () => {
         onChange={({ target }) => setEmail(target.value)}
       />
       <button>enviar</button>
-    </div>
+    </form>
   );
 };
 
