@@ -1,12 +1,23 @@
-input {
-  display: block;
-  margin-bottom: 1rem;
+* {
+  box-sizing: border-box;
 }
-button {
-  background-color: blue;
-  color: white;
-  padding: 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.5rem;
+body {
+  margin: 0px;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: "Spectral", Georgia;
+  font-family: var(--type-first);
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
