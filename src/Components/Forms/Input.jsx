@@ -1,8 +1,19 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-const Input = () => {
-  return <input className={styles.input} />;
+const Input = ({ label, type, name, value }) => {
+  return (
+    <div>
+      <label htmlFor={name}>{label}</label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        value={value}
+        className={styles.input}
+      />
+    </div>
+  );
 };
 
 export default Input;
