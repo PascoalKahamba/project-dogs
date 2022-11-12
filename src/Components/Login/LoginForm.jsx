@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 
 const LoginForm = () => {
@@ -26,14 +27,9 @@ const LoginForm = () => {
     <section>
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" value="username" name="username" />
-        <Input
-          label="Senha"
-          type="password"
-          value="userpassword"
-          name="password"
-        />
-        <button>Entrar</button>
+        <Input label="Usuário" type="text" name="username" />
+        <Input label="Senha" type="password" name="password" />
+        <Button>Entrar</Button>
       </form>
       <Link to="/login/criar">Cadastro</Link>
     </section>

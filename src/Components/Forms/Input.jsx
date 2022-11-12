@@ -12,6 +12,7 @@ const Input = ({ label, type, name, value }) => {
         value={value}
         className={styles.input}
       />
+      {value}
     </div>
   );
 };
