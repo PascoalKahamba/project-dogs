@@ -6,7 +6,7 @@ import Input from "../Forms/Input";
 
 const LoginForm = () => {
   const username = useForm();
-  console.log(username);
+  const password = useForm();
   function handleSubmit(event) {
     event.preventDefault();
     fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
@@ -28,8 +28,8 @@ const LoginForm = () => {
     <section>
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" />
-        <Input label="Senha" type="password" name="password" />
+        <Input label="Usuário" type="text" name="username" {...username} />
+        <Input label="Senha" type="password" name="password" {...password} />
         <Button>Entrar</Button>
       </form>
       <Link to="/login/criar">Cadastro</Link>
