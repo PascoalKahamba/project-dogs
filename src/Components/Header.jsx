@@ -6,7 +6,7 @@ import logo from "../assets/dogs.svg";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
-  const context = useContext(UserContext);
+  const { data } = useContext(UserContext);
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -14,9 +14,15 @@ const Header = () => {
           {/* <Dogs /> */}
           <img src={logo} alt="foto dogs" />
         </Link>
-        <Link className={styles.login} to="/login">
-          {context.usuario}Login | Criar
-        </Link>
+        {data ? (
+          <Link className={styles.login} to="/conta">
+            {data.nome}
+          </Link>
+        ) : (
+          <Link className={styles.login} to="/login">
+            Login | Criar
+          </Link>
+        )}
       </nav>
     </header>
   );
