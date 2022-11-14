@@ -2,5 +2,10 @@ import React, { createContext } from "react";
 export const UserContext = createContext();
 
 export const UserStorage = ({ children }) => {
-  return <UserContext.Provider> {children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ usuario: "Pascoal" }}>
+      {" "}
+      {children}
+    </UserContext.Provider>
+  );
 };
