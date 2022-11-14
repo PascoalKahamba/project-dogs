@@ -8,27 +8,16 @@ import Input from "../Forms/Input";
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     if (username.validate() && password.validate()) {
       const { url, options } = TOKEN_POST({
         username: username.value,
         password: password.value,
       });
-      fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(),
-      })
-        .then((response) => {
-          console.log(response);
-          return response.json();
-        })
-        .then((json) => {
-          console.log(json);
-        });
+      const response = await fetch(url, options);
+      const json = await response.json();
+      window.localStorage.setItem("token", json.token);
     }
   }
   return (
