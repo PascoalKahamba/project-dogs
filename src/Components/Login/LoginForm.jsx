@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TOKEN_POST } from "../../api";
+import { TOKEN_POST, USER_GET } from "../../api";
 import useForm from "../../Hooks/useForm";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
-
+async function getUser(token) {
+  const { url, options } = USER_GET(token);
+  const response = await fetch(url, options);
+  const json = await response.json();
+  console.log(json);
+}
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
@@ -18,6 +23,7 @@ const LoginForm = () => {
       const response = await fetch(url, options);
       const json = await response.json();
       window.localStorage.setItem("token", json.token);
+      getUser(json.token);
     }
   }
   return (
