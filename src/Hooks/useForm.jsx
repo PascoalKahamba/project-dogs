@@ -7,9 +7,16 @@ const types = {
   },
 };
 
-const useForm = () => {
+const useForm = (type) => {
   const [value, setValue] = useState("");
-
+  const [error, setError] = useState(null);
+  function validate(value) {
+    if (type === false) return true;
+    if (value.length === 0) {
+      setError("Preencha um valor");
+      return false;
+    }
+  }
   function onChange({ target }) {
     setValue(target.value);
   }
