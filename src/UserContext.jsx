@@ -18,7 +18,7 @@ export const UserStorage = ({ children }) => {
           const { url, options } = TOKEN_VALIDATE_POST(token);
           const response = await fetch(url, options);
           if (!response.ok) throw new Error("Token inválido");
-          const json = await response.json();
+          await getUser(token);
         } catch (err) {
         } finally {
           setLoading(false);
@@ -43,8 +43,15 @@ export const UserStorage = ({ children }) => {
     window.localStorage.setItem("token", token);
     getUser(token);
   }
+  async function userLogout() {
+    setData(null);
+    setError(null);
+    setLoading(false);
+    setLogin(false);
+    window.localStorage.removeItem("token");
+  }
   return (
-    <UserContext.Provider value={{ userLogin, data }}>
+    <UserContext.Provider value={{ userLogin, data, userLogout }}>
       {" "}
       {children}
     </UserContext.Provider>
