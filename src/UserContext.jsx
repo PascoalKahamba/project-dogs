@@ -46,7 +46,7 @@ export const UserStorage = ({ children }) => {
       if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
       const { token } = await tokenRes.json();
       window.localStorage.setItem("token", token);
-      getUser(token);
+      await getUser(token);
     } catch (err) {
       setError(err.message);
       setLogin(false);
@@ -62,7 +62,9 @@ export const UserStorage = ({ children }) => {
     window.localStorage.removeItem("token");
   }
   return (
-    <UserContext.Provider value={{ userLogin, data, userLogout }}>
+    <UserContext.Provider
+      value={{ userLogin, data, userLogout, error, login, loading }}
+    >
       {" "}
       {children}
     </UserContext.Provider>
