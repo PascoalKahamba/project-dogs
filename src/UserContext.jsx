@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { TOKEN_POST, USER_GET } from "./api";
 export const UserContext = createContext();
 
@@ -8,6 +8,14 @@ export const UserStorage = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    async function autoLogin() {
+      const token = window.localStorage.getItem("token");
+      if (token) {
+      }
+    }
+    autoLogin();
+  }, []);
   async function getUser(token) {
     const { url, options } = USER_GET(token);
     const response = await fetch(url, options);
