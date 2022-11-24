@@ -5,6 +5,7 @@ import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import Error from "../Helper/Error";
+import styles from "./LoginForm.moule.css";
 
 const LoginForm = () => {
   const username = useForm();
@@ -20,7 +21,7 @@ const LoginForm = () => {
   return (
     <section className="animeLeft">
       <h1 className="title">Login</h1>
-      <form action="" onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
         {loading ? (
@@ -31,7 +32,16 @@ const LoginForm = () => {
 
         <Error error={error} />
       </form>
-      <Link to="/login/criar">Cadastro</Link>
+      <Link to="/login/perdeu" className={styles.perdeu}>
+        Perdeu Senha?
+      </Link>
+      <div className={styles.cadastro}>
+        <h2 className={styles.subtitle}>Cadastre-se</h2>
+        <p>Ainda não possui uma conta? Cadastre-se no site.</p>
+        <Link className={styles.buttonCriar} to="/login/criar">
+          Cadastro
+        </Link>
+      </div>
     </section>
   );
 };
