@@ -8,6 +8,7 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function autoLogin() {
@@ -48,6 +49,7 @@ export const UserStorage = ({ children }) => {
       const { token } = await tokenRes.json();
       window.localStorage.setItem("token", token);
       await getUser(token);
+      navigate("/conta");
     } catch (err) {
       setError(err.message);
       setLogin(false);
@@ -61,6 +63,7 @@ export const UserStorage = ({ children }) => {
     setLoading(false);
     setLogin(false);
     window.localStorage.removeItem("token");
+    navigate("/login");
   }
   return (
     <UserContext.Provider
