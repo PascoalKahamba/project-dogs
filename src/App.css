@@ -6,7 +6,7 @@ body {
   padding-top: 4rem;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
-  --type-second: "Spectral", Georgia;
+  --type-second: "Spectral", georgia;
   font-family: var(--type-first);
 }
 h1,
@@ -34,6 +34,13 @@ input {
 }
 a {
   text-decoration: none;
+}
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
 }
 .container {
   max-width: 50rem;
