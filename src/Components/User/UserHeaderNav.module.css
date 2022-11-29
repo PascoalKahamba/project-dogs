@@ -58,4 +58,14 @@
   width: 1.2rem;
   height: 2px;
   border-radius: 2px;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+  transition: 0.1s;
+}
+.mobileButton:hover,
+.mobileButton:focus {
+  background: white;
+  outline: none;
+  box-shadow: 0 0 0 3px #fea;
+  border-color: #fb1;
+  color: #fb1;
 }
