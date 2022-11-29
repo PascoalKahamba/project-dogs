@@ -1,13 +1,7 @@
 import React from "react";
-import UserHeaderNav from "./UserHeaderNav";
 
 const UserPhotoPost = () => {
-  return (
-    <header>
-      <h1 className="title">Titulo</h1>
-      <UserHeaderNav />
-    </header>
-  );
+  return <div>Postar Fotos</div>;
 };
 
 export default UserPhotoPost;
