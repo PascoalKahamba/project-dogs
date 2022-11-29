@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import styles from "./UserHeaderNav.module.css";
@@ -10,28 +10,35 @@ import useMedia from "../../Hooks/useMedia";
 
 const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const mobile = useMedia("(max-width:40rem)");
   console.log(mobile);
 
   return (
-    <nav className={styles.nav}>
-      <NavLink to="/conta" end>
-        <img src={minhasFotos} />
-        {mobile && "Minahs fotos"}
-      </NavLink>
-      <NavLink to="/conta/estatisticas">
-        <img src={estatisticas} />
-        {mobile && "Estatisticas"}
-      </NavLink>
-      <NavLink to="/conta/postar">
-        <img src={adicionarFotos} />
-        {mobile && "Adicionar fotos"}
-      </NavLink>
-      <button onClick={userLogout}>
-        <img src={sair} />
-        {mobile && "Sair"}
-      </button>
-    </nav>
+    <>
+      <button
+        aria-label="menu"
+        onClick={() => setMobileMenu(!mobileMenu)}
+      ></button>
+      <nav className={styles.nav}>
+        <NavLink to="/conta" end>
+          <img src={minhasFotos} />
+          {mobile && "Minahs fotos"}
+        </NavLink>
+        <NavLink to="/conta/estatisticas">
+          <img src={estatisticas} />
+          {mobile && "Estatisticas"}
+        </NavLink>
+        <NavLink to="/conta/postar">
+          <img src={adicionarFotos} />
+          {mobile && "Adicionar fotos"}
+        </NavLink>
+        <button onClick={userLogout}>
+          <img src={sair} />
+          {mobile && "Sair"}
+        </button>
+      </nav>
+    </>
   );
 };
 
