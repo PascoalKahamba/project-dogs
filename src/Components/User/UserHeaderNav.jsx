@@ -12,15 +12,15 @@ const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
   return (
     <nav className={styles.nav}>
-      <NavLink to="/conta">
+      <NavLink to="/conta" end activeClassName={styles.active}>
         <img src={minhasFotos} />
         {mobile && "Minahs fotos"}
       </NavLink>
-      <NavLink to="/conta/estatisticas">
+      <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
         <img src={estatisticas} />
         {mobile && "Estatisticas"}
       </NavLink>
-      <NavLink to="/conta/postar">
+      <NavLink to="/conta/postar" activeClassName={styles.active}>
         <img src={adicionarFotos} />
         {mobile && "Adicionar fotos"}
       </NavLink>
