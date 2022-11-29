@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserPhotoPost = () => {
-  return <div>UserPhotoPost</div>;
+  return <div>Postar Fotos</div>;
 };
 
 export default UserPhotoPost;
