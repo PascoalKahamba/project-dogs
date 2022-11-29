@@ -12,14 +12,16 @@ const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
   const [mobileMenu, setMobileMenu] = useState(false);
   const mobile = useMedia("(max-width:40rem)");
-  console.log(mobile);
 
   return (
     <>
-      <button
-        aria-label="menu"
-        onClick={() => setMobileMenu(!mobileMenu)}
-      ></button>
+      {mobile && (
+        <button
+          aria-label="menu"
+          className={styles.mobileButton}
+          onClick={() => setMobileMenu(!mobileMenu)}
+        ></button>
+      )}
       <nav className={styles.nav}>
         <NavLink to="/conta" end>
           <img src={minhasFotos} />
