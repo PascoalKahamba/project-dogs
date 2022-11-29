@@ -10,6 +10,8 @@ import sair from "../../assets/sair.svg";
 const UserHeaderNav = () => {
   const [mobile, setMobile] = useState(null);
   const { userLogout } = useContext(UserContext);
+  const { matches } = window.matchMedia("(max-width:40rem)");
+  console.log(matches);
   return (
     <nav className={styles.nav}>
       <NavLink to="/conta" end activeClassName={styles.active}>
