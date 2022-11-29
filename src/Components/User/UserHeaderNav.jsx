@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import styles from "./UserHeaderNav.module.css";
@@ -6,23 +6,24 @@ import minhasFotos from "../../assets/feed.svg";
 import estatisticas from "../../assets/estatisticas.svg";
 import adicionarFotos from "../../assets/adicionar.svg";
 import sair from "../../assets/sair.svg";
+import useMedia from "../../Hooks/useMedia";
 
 const UserHeaderNav = () => {
-  const [mobile, setMobile] = useState(null);
   const { userLogout } = useContext(UserContext);
-  const { matches } = window.matchMedia("(max-width:40rem)");
-  console.log(matches);
+  const mobile = useMedia("(max-width:40rem)");
+  console.log(mobile);
+
   return (
     <nav className={styles.nav}>
-      <NavLink to="/conta" end activeClassName={styles.active}>
+      <NavLink to="/conta" end>
         <img src={minhasFotos} />
         {mobile && "Minahs fotos"}
       </NavLink>
-      <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
+      <NavLink to="/conta/estatisticas">
         <img src={estatisticas} />
         {mobile && "Estatisticas"}
       </NavLink>
-      <NavLink to="/conta/postar" activeClassName={styles.active}>
+      <NavLink to="/conta/postar">
         <img src={adicionarFotos} />
         {mobile && "Adicionar fotos"}
       </NavLink>
