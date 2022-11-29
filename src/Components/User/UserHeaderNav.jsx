@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../../UserContext";
+import styles from "./UserHeaderNav.module.css";
 import minhasFotos from "../../assets/feed.svg";
 import estatisticas from "../../assets/estatisticas.svg";
 import adicionarFotos from "../../assets/adicionar.svg";
@@ -9,7 +10,7 @@ import sair from "../../assets/sair.svg";
 const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
   return (
-    <nav>
+    <nav className={styles.nav}>
       <NavLink to="/conta">
         <img src={minhasFotos} />
         Minahs fotos
