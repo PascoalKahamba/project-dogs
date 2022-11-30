@@ -62,10 +62,14 @@
   transition: 0.1s;
 }
 .mobileButton:hover,
-.mobileButton:focus {
+.mobileButton:focus,
+.mobileButtonActive {
   background: white;
   outline: none;
   box-shadow: 0 0 0 3px #fea;
   border-color: #fb1;
   color: #fb1;
+}
+.mobileButtonActive {
+  transform: rotate(90deg);
 }
