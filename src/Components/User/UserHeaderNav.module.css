@@ -59,7 +59,7 @@
   height: 2px;
   border-radius: 2px;
   box-shadow: 0 6px currentColor, 0 -6px currentColor;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 .mobileButton:hover,
 .mobileButton:focus,
@@ -70,6 +70,9 @@
   border-color: #fb1;
   color: #fb1;
 }
-.mobileButtonActive {
+.mobileButtonActive::after {
   transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 8px currentColor, 0 -8px currentColor;
 }
