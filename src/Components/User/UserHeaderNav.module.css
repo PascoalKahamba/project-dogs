@@ -71,7 +71,7 @@
   color: #fb1;
 }
 .mobileButtonActive::after {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
   width: 4px;
   height: 4px;
   box-shadow: 0 8px currentColor, 0 -8px currentColor;
