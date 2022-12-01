@@ -6,15 +6,24 @@ import useFetch from "../../Hooks/useFetch";
 import Button from "../Forms/Button";
 
 const UserPhotoPost = () => {
-  const name = useForm();
+  const nome = useForm();
   const peso = useForm("number");
   const idade = useForm("number");
   const { data, loading, error, request } = useFetch();
   const [img, setImg] = useState({});
   function handleSubmit(event) {
     event.preventDefault();
+    const formData = new formData();
+    formData.append("img", img.raw);
+    formData.append("nome", nome.value);
+    formData.append("peso", peso.value);
+    formData.append("idade", idade.value);
   }
-  function handleImgChange() {}
+  function handleImgChange({ target }) {
+    setImg({
+      raw: target.files[0],
+    });
+  }
   return (
     <section className={`${styles.photoPost} animeLeft`}>
       <form onSubmit={handleSubmit}>
