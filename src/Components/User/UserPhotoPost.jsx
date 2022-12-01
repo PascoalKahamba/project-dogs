@@ -4,6 +4,7 @@ import Input from "../Forms/Input";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import Button from "../Forms/Button";
+import { PHOTO_POST } from "../../api";
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -18,6 +19,9 @@ const UserPhotoPost = () => {
     formData.append("nome", nome.value);
     formData.append("peso", peso.value);
     formData.append("idade", idade.value);
+
+    const token = window.localStorage.getItem("token");
+    const { url, options } = PHOTO_POST(formData, token);
     request(url, options);
   }
   function handleImgChange({ target }) {
