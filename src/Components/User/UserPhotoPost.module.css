@@ -12,3 +12,9 @@
   background-size: cover;
   background-position: center center;
 }
+.preview:after {
+  content: "";
+  display: block;
+  height: 0px;
+  padding-bottom: 100%;
+}
