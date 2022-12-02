@@ -5,7 +5,7 @@ const FeedModal = () => {
   const { data, loading, error, request } = useFetch();
   useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET();
+      const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
       request(url, options);
     }
     fetchPhotos();
