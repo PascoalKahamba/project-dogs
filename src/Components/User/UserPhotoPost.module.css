@@ -4,6 +4,11 @@
   gap: 2rem;
   margin-bottom: 2rem;
 }
-.photoPost #img {
+.file {
   margin-bottom: 1rem;
+}
+.preview {
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center center;
 }

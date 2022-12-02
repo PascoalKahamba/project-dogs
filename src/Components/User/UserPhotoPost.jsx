@@ -36,7 +36,13 @@ const UserPhotoPost = () => {
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
         <Input label="Idade" type="number" name="idade" {...idade} />
-        <input type="file" name="img" id="img" onChange={handleImgChange} />
+        <input
+          type="file"
+          className={styles.file}
+          name="img"
+          id="img"
+          onChange={handleImgChange}
+        />
         <Button>Enviar</Button>
       </form>
       <div>
