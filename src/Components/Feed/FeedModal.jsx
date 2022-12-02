@@ -1,6 +1,8 @@
 import React from "react";
+import useFetch from "../../Hooks/useFetch";
 
 const FeedModal = () => {
+  const { data, loading, error, request } = useFetch();
   return <div>FeedModal</div>;
 };
 
