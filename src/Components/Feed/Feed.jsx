@@ -7,7 +7,7 @@ const Feed = () => {
   return (
     <section>
       {modalPhoto && <FeedModal photo={modalPhoto} />}
-      <FeedPhotos />
+      <FeedPhotos setModalPhoto={setModalPhoto} />
     </section>
   );
 };
