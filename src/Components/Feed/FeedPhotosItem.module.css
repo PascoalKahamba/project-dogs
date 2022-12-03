@@ -17,13 +17,24 @@
 .photo img {
   grid-area: 1/1;
 }
-.photo span {
+.visualizacao {
   background: rgba(0, 0, 0, 0.3);
   color: white;
   font-size: 1rem;
   text-align: center;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   grid-area: 1/1;
+}
+.photo:hover .visualizacao {
+  display: flex;
+}
+.visualizacao::before {
+  content: "";
+  width: 16px;
+  height: 10px;
+  margin-right: 0.25rem;
+  display: inline-block;
+  background: url("../../assets/visualizacao.svg") no-repeat;
 }
