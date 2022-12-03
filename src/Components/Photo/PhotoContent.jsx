@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PhotoComnents from "./PhotoComnents";
 import styles from "./PhotoContent.module.css";
 
 const PhotoContent = ({ data }) => {
@@ -23,6 +24,7 @@ const PhotoContent = ({ data }) => {
           <li>{photo.idade} anos</li>
         </ul>
       </div>
+      <PhotoComnents id={photo.id} comnents={comnents} />
     </div>
   );
 };
