@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./PhotoContent.mdoule.css";
 
 const PhotoContent = ({ data }) => {
-  return <div>PhotoContent</div>;
+  return <div></div>;
 };
 
 export default PhotoContent;
