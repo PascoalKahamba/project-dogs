@@ -15,8 +15,7 @@ const FeedModal = ({ photo }) => {
     <div className={styles.modal}>
       {error && <Error error={error} />}
       {loading && <Loading />}
-      {data && <PhotoContent />}
-      <img src={photo.src} alt="" />
+      {data && <PhotoContent data={data} />}
     </div>
   );
 };
