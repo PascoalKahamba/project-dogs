@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import { COMMENT_POST } from "../../api";
 import enviar from "../../assets/enviar.svg";
+import useFetch from "../../Hooks/useFetch";
 
 const PhotoComnentsForms = ({ id }) => {
-  const { comnents, setComnents } = useState("");
+  const { comment, setComnents } = useState("");
+  const { request, error } = useFetch();
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const { url, options } = COMMENT_POST(id, { comment });
+    await request(url, options);
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <textarea
-        id="comnents"
-        name="comnents"
+        id="comment"
+        name="comment"
         placeholder="Comente..."
-        value={comnents}
+        value={comment}
         onChange={({ target }) => setComnents(target.value)}
       />
       <button>
