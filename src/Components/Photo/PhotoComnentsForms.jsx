@@ -7,6 +7,7 @@ import Error from "../Helper/Error";
 const PhotoComnentsForms = ({ id, setComments }) => {
   const { comment, setComment } = useState("");
   const { request, error } = useFetch();
+
   async function handleSubmit(event) {
     event.preventDefault();
     const { url, options } = COMMENT_POST(id, { comment });
