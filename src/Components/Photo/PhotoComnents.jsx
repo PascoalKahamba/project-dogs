@@ -7,7 +7,7 @@ const PhotoComnents = (props) => {
   const [comments, setComments] = useState(() => props.comments);
   const { login } = useContext(UserContext);
   return (
-    <div>
+    <>
       <ul className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
@@ -17,8 +17,8 @@ const PhotoComnents = (props) => {
         ))}
       </ul>
 
-      {login && <PhotoComnentsForms id={props.id} />}
-    </div>
+      {login && <PhotoComnentsForms id={props.id} setComments={setComments} />}
+    </>
   );
 };
 
