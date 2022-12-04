@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../UserContext";
+import PhotoComnentsForms from "./PhotoComnentsForms";
 
 const PhotoComnents = () => {
-  return <div>PhotoComnents</div>;
+  const { login } = useContext(UserContext);
+  return <div>{login && <PhotoComnentsForms />}</div>;
 };
 
 export default PhotoComnents;
