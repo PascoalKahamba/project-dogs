@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { COMMENT_POST } from "../../api";
 import enviar from "../../assets/enviar.svg";
 import useFetch from "../../Hooks/useFetch";
+import Error from "../Helper/Error";
 
 const PhotoComnentsForms = ({ id, setComments }) => {
   const { comment, setComment } = useState("");
@@ -27,6 +28,7 @@ const PhotoComnentsForms = ({ id, setComments }) => {
       <button>
         <img src={enviar} alt="image icon" />
       </button>
+      <Error error={error} />
     </form>
   );
 };
