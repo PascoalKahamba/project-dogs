@@ -16,3 +16,10 @@
   background: #eee;
   transition: 0.2s;
 }
+.textarea:focus,
+.textarea:hover {
+  outline: none;
+  border-color: #fb1;
+  box-shadow: 0 0 0 3px #fea;
+  background: white;
+}
