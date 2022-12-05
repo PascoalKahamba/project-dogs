@@ -3,6 +3,7 @@ import { COMMENT_POST } from "../../api";
 import enviar from "../../assets/enviar.svg";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
+import styles from "./PhotoCommentsForms.module.css";
 
 const PhotoComnentsForms = ({ id, setComments }) => {
   const [comment, setComment] = useState("");
