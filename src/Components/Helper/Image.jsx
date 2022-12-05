@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Image/moduxle.css";
+import styles from "./Image.module.css";
 
 const Image = ({ alt, ...props }) => {
   return (
