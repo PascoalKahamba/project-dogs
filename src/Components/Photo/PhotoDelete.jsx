@@ -6,12 +6,10 @@ import styles from "./PhotoDelete.module.css";
 const PhotoDelete = ({ id }) => {
   const { loading, request } = useFetch();
 
-  async function handleClick(event) {
-    event.preventDefault();
+  async function handleClick() {
     const { url, options } = PHOTO_DELETE(id);
     const { response } = await request(url, options);
-    if (response.ok) {
-    }
+    if (response.ok) window.location.reload();
   }
   return (
     <div>
