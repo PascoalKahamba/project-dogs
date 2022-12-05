@@ -5,7 +5,7 @@ import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
 
 const PhotoComnentsForms = ({ id, setComments }) => {
-  const { comment, setComment } = useState("");
+  const [comment, setComment] = useState("");
   const { request, error } = useFetch();
 
   async function handleSubmit(event) {
