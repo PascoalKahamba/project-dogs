@@ -1,14 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { UserContext } from "../../UserContext";
 import PhotoComnentsForms from "./PhotoComnentsForms";
 import styles from "./PhotoComments.module.css";
 
 const PhotoComnents = (props) => {
   const [comments, setComments] = useState(() => props.comments);
+  const commentsSection = useRef(null);
   const { login } = useContext(UserContext);
   return (
     <>
-      <ul className={styles.comments}>
+      <ul ref={commentsSection} className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author}: </b>
