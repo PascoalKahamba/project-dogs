@@ -4,9 +4,12 @@ import FeedPhotos from "./FeedPhotos";
 
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = useState(null);
+  const [pages, setPages] = useState([1, 2]);
 
   useEffect(() => {
-    function infiniteScroll() {}
+    function infiniteScroll(event) {
+      console.log(event);
+    }
     window.addEventListener("wheel", infiniteScroll);
     window.addEventListener("scroll", infiniteScroll);
     return () => {
@@ -20,7 +23,15 @@ const Feed = ({ user }) => {
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
-      <FeedPhotos user={user} setModalPhoto={setModalPhoto} />
+
+      {pages.map((page) => (
+        <FeedPhotos
+          key={page}
+          user={user}
+          page={page}
+          setModalPhoto={setModalPhoto}
+        />
+      ))}
     </section>
   );
 };

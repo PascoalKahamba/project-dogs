@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export const UserContext = createContext();
 
 export const UserStorage = ({ children }) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(false);
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
