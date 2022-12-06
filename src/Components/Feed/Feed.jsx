@@ -4,11 +4,17 @@ import FeedPhotos from "./FeedPhotos";
 
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = useState(null);
-  const [pages, setPages] = useState([1, 2]);
+  const [pages, setPages] = useState([1]);
 
   useEffect(() => {
-    function infiniteScroll(event) {
-      console.log(event);
+    let wait = false;
+    function infiniteScroll() {
+      const scroll = window.scrollY;
+      const height = document.body.offsetHeight - window.innerHeight;
+      if (scroll > height * 0.75 && !wait) {
+        setPages((pages) => [...pages, pages.length + 1]);
+        wait = true;
+      }
     }
     window.addEventListener("wheel", infiniteScroll);
     window.addEventListener("scroll", infiniteScroll);
