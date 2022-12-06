@@ -14,6 +14,9 @@ const Feed = ({ user }) => {
       if (scroll > height * 0.75 && !wait) {
         setPages((pages) => [...pages, pages.length + 1]);
         wait = true;
+        setTimeout(() => {
+          wait = false;
+        }, 500);
       }
     }
     window.addEventListener("wheel", infiniteScroll);
