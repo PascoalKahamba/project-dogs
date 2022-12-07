@@ -13,15 +13,15 @@ const Photo = () => {
     const { url, options } = PHOTOS_GETS(id);
     request(url, options);
   }, [request, id]);
-  if (error) <Error error={error} />;
-  if (loading) <Loading />;
+  if (error) return <Error error={error} />;
+  if (loading) return <Loading />;
   if (data)
     return (
-      <section>
-        <PhotoContent data={data} />
+      <section className="container mainContainer">
+        <PhotoContent data={data} single={true} />
       </section>
     );
-  else null;
+  else return null;
 };
 
 export default Photo;
