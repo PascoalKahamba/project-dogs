@@ -5,13 +5,12 @@ import FeedPhotos from "./FeedPhotos";
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = useState(null);
   const [pages, setPages] = useState([1]);
-  const [infinite] = useState(true);
+  const [infinite, setInfinite] = useState(true);
 
   useEffect(() => {
     let wait = false;
     function infiniteScroll() {
       if (infinite) {
-        setInfinite;
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.75 && !wait) {
