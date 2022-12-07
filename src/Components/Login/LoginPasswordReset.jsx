@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const LoginPasswordReset = () => {
-  return <div>LoginPasswordReset</div>;
+  const [loading, setLoading] = useState("");
+  const [key, steKey] = useState("");
+
+  useEffect(() => {});
+  return (
+    <div>
+      {key}
+      {loading}
+    </div>
+  );
 };
 
 export default LoginPasswordReset;
