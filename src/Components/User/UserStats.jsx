@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "../Helper/Head";
+import Loading from "../Helper/Loading";
+import Error from "../Helper/Error";
 import useFetch from "../../Hooks/useFetch";
 import { STATS_GET } from "../../api";
 
@@ -12,12 +14,16 @@ const UserStats = () => {
     }
     getData();
   }, [request]);
-  return (
-    <div>
-      <Head title="Estatísticas" />
-      Estatisticas
-    </div>
-  );
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
+  if (data)
+    return (
+      <div>
+        <Head title="Estatísticas" />
+        Estatisticas
+      </div>
+    );
+  else return null;
 };
 
 export default UserStats;
