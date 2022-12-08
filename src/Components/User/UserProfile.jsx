@@ -9,7 +9,7 @@ const UserProfile = () => {
   return (
     <section className="container mainSection">
       <Head title={user} />
-      <h1 classeName="title">{user}</h1>
+      <h1 className="title">{user}</h1>
       <Feed user={user} />
     </section>
   );
