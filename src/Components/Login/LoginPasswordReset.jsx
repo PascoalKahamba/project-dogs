@@ -36,7 +36,7 @@ const LoginPasswordReset = () => {
   }, []);
   return (
     <div>
-      <Head title="Resetar a Senha" />
+      <Head title="Reseta a Senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input
