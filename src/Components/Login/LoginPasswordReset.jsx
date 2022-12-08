@@ -3,13 +3,21 @@ import Input from "../Forms/Input";
 import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
+import { PASSWORD_RESET } from "../../api";
 
 const LoginPasswordReset = () => {
   const [login, setLogin] = useState("");
   const [key, setKey] = useState("");
   const password = useForm();
+  const { error, loading, request } = useFetch();
   async function handleSubmit(event) {
     event.preventDefaul();
+    const { url, options } = PASSWORD_RESET({
+      login,
+      key,
+      password: password.value,
+    });
+    await request(url, options);
   }
 
   useEffect(() => {
