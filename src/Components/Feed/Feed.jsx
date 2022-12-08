@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "../Helper/Head";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 
@@ -32,6 +33,7 @@ const Feed = ({ user }) => {
 
   return (
     <section>
+      <Head title="Fotos" />
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
