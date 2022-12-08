@@ -4,6 +4,7 @@ import Loading from "../Helper/Loading";
 import Error from "../Helper/Error";
 import useFetch from "../../Hooks/useFetch";
 import { STATS_GET } from "../../api";
+import UserStatsGraphs from "./UserStatsGraphs";
 
 const UserStats = () => {
   const { error, loading, request, data } = useFetch();
@@ -20,7 +21,8 @@ const UserStats = () => {
     return (
       <div>
         <Head title="Estatísticas" />
-        Estatisticas
+
+        <UserStatsGraphs />
       </div>
     );
   else return null;
