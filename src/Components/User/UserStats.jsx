@@ -21,8 +21,7 @@ const UserStats = () => {
     return (
       <div>
         <Head title="Estatísticas" />
-
-        <UserStatsGraphs />
+        <UserStatsGraphs data={data} />
       </div>
     );
   else return null;
