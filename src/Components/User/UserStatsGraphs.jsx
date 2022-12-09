@@ -15,13 +15,29 @@ const UserStatsGraphs = ({ data }) => {
     setTotal(data.map(({ acessos }) => +acessos).reduce((a, b) => a + b));
     setGraph(graphData);
   }, [data]);
+
   return (
     <section className={`${styles.graph} animeLeft`}>
       <div className={styles.total}>
         <p>Acessos: {total}</p>
       </div>
       <div className={styles.graphs}>
-        <VictoryPie data={graph} />
+        <VictoryPie
+          data={graph}
+          innerRadius={50}
+          padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
+          style={{
+            data: {
+              fillOpacit: 0.9,
+              stroke: "#fff",
+              strokeWidth: 2,
+            },
+            labels: {
+              fontSize: 14,
+              fill: "#333",
+            },
+          }}
+        />
       </div>
     </section>
   );
