@@ -33,7 +33,6 @@ const Feed = ({ user }) => {
 
   return (
     <section>
-      {/* <Head title="Fotos" /> */}
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}

@@ -13,7 +13,10 @@ const FeedPhotos = ({ setInfinite, page, user, setModalPhoto }) => {
       const total = 3;
       const { url, options } = PHOTOS_GET({ page, total, user });
       const { response, json } = request(url, options);
-      if (response && response.ok && json.length < total) setInfinite(false);
+      if (response && response.ok && json.length < total) {
+        setInfinite(false);
+        <p>Não existem mais postagens.</p>;
+      }
     }
     fetchPhotos();
   }, [request, user, page, setInfinite]);
