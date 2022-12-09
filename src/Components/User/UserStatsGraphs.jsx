@@ -21,7 +21,7 @@ const UserStatsGraphs = ({ data }) => {
       <div className={styles.total}>
         <p>Acessos: {total}</p>
       </div>
-      <div className={styles.graphs}>
+      <div className={styles.graphItem}>
         <VictoryPie
           data={graph}
           innerRadius={50}
@@ -38,6 +38,11 @@ const UserStatsGraphs = ({ data }) => {
             },
           }}
         />
+      </div>
+      <div className={styles.graphItem}>
+        <VictoryChart>
+          <VictoryBar data={graph} alignment="start"></VictoryBar>
+        </VictoryChart>
       </div>
     </section>
   );
